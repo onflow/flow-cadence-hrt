@@ -1,15 +1,6 @@
 var Handlebars = require("handlebars");  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['empty'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "describe(\""
-    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"suitName") || (depth0 != null ? lookupProperty(depth0,"suitName") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"suitName","hash":{},"data":data,"loc":{"start":{"line":1,"column":10},"end":{"line":1,"column":22}}}) : helper)))
-    + "\", () => {\n    test(\"all cool\"),()=>{\n        console.log(\"DONE\")\n    })\n\n    test(\"second one\"),()=>{\n        console.log(\"DONE\")\n    })\n})";
+    return "describe(\"basic suit\", () => {\n    test(\"all cool\",()=>{\n        console.log(\"DONE\")\n    })\n})";
 },"useData":true});
 templates['suit'] = template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
