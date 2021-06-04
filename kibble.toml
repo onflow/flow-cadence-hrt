@@ -1,0 +1,25 @@
+name = "Kibble Testing"
+
+[[tests]]
+    name = "setup account"
+    deploy = ["FungibleToken", "Kibble"]
+
+    [[tests.interactions]]
+        type = "transacton"
+        name = "setup-account"
+        args = ["Alice"]
+
+    [[tests.interactions]]
+        type = "transaction"
+        name = "mint-kibble"
+
+    [[tests.interactions]]
+        type = "transaction"
+        name = "transfer-kibble"
+        args = ["Alice", "1.337"]
+
+    [[tests.interactions]]
+        type = "script"
+        name = "get-balance"
+        args = ["Alice"]
+        expect = "1.337"

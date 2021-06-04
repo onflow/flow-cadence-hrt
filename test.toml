@@ -1,0 +1,63 @@
+suitName = "Basic Interaction"
+
+# Basic test to check if contracts will be deployed
+[[tests]]
+    name = "contract deploys"
+    deploy = ["HelloWorld", "Basic"]
+
+    [[tests.interactions]]
+        type = "transaction"
+        name = "setup-account"
+        args = ["Alice"]
+        signers = ["Alice", "Bob"]
+        shallRevert = true
+
+# Try to transfer tokens to Alice account
+[[tests]]
+    name = "transfer tokens"
+    deploy = ["HelloWorld", "Basic"]
+
+    [[tests.interactions]]
+        type = "transaction"
+        name = "setup-account"
+        args = ["Alice"]
+        signers = ["Alice"]
+
+    [[tests.interactions]]
+        type = "transaction"
+        name = "send-tokens"
+        args = ["Alice", "1.337"]
+        signers = ["Alice"]
+
+    [[tests.interactions]]
+        type = "script"
+        name = "get-balance"
+        args = ["Alice"]
+        expectNot = 0
+
+# Check balance
+[[tests]]
+    name = "check balance"
+    deploy = ["HelloWorld", "Basic"]
+
+    [[tests.interactions]]
+        type = "script"
+        name = "get-balance"
+        args = ["Alice"]
+        expect = "0.001"
+
+[[tests]]
+    name = "check balance multiple times"
+
+    [[tests.interactions]]
+        type = "script"
+        name = "get-balance"
+        args = ["Alice"]
+        expect = "0.001"
+
+    [[tests.interactions]]
+        type = "script"
+        name = "get-balance"
+        args = ["Bob"]
+        expect = "0.001"
+
