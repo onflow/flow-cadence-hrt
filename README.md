@@ -1,3 +1,4 @@
-# Flow Cadence Template Utilities
-Working with Cadence template files can be a bit frustrating.
-We aim to simplify this process by providing you an easy way to generate supporting files, which are easy to use. 
+# Cadence HRT - Human Readable Testing
+
+This project aims to provide the ability to write tests for your Cadence code using TOML (or other human-readable formats in the future).
+
