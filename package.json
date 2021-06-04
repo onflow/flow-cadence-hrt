@@ -13,7 +13,7 @@
   "scripts": {
     "precompile-handlebars": "handlebars templates -f ./templates/index.js -e hbs -c handlebars",
     "generate": "npm run precompile-handlebars && node index.js",
-    "start": "node index.js"
+    "kibble-test": "node index.js ./toml/kibble.toml"
   },
   "keywords": [],
   "author": "Maksim Daunarovich",
