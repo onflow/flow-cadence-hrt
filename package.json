@@ -2,7 +2,7 @@
   "name": "toml-testing",
   "version": "0.0.1",
   "main": "index.js",
-  "module": "main.js",
+  "module": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/onflow/flow-cadence-hrt.git"
