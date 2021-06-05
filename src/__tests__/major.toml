@@ -1,0 +1,23 @@
+name = "Ground Control to Major Tom"
+
+[[tests]]
+    name = "basic transaction"
+    [[interactions]]
+        type = "script"
+        name = "get-forty-two"
+        expect = 42
+
+[[tests]]
+    name = "shall return different one"
+    [[interactions]]
+        type = "script"
+        name = "get-forty-two"
+        expect = 40
+        shallRevert = true
+
+[[tests]]
+    name = "this test shall fail"
+    [[interactions]]
+        type = "script"
+        name = "get-forty-two"
+        expect = 40

@@ -1,0 +1,16 @@
+name: Basic Unit Test
+
+tests:
+  - name: transfer kibble
+    interactions:
+      - name: setup-account
+        type: transaction
+        shallRevert: true
+        signers: [Alice, Bob]
+
+      - name: transfer-tokens
+        type: transaction
+
+      - name: get-balance
+        type: script
+        expect: 0

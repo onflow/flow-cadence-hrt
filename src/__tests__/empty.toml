@@ -1,0 +1,4 @@
+name = "empty test should succeed"
+
+[[tests]]
+    name = "there is no spoon"
