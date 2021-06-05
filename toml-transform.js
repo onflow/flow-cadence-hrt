@@ -8,18 +8,14 @@ module.exports = {
   process(src) {
     const parsed = toml.parse(src);
     const fixed = fixJSON(parsed);
-
-    console.log(fixed);
-
-    const tests = prepareTests(fixed);
-
+    const tests = prepareTests(fixed, "suit");
+    
     const options = {
       babelrc: false,
       compact: false,
       plugins: [require.resolve("@babel/plugin-transform-modules-commonjs")],
     };
 
-    const transformed = babel.transform(tests, options).code;
-    return transformed
+    return babel.transform(tests, options).code;
   },
 };
