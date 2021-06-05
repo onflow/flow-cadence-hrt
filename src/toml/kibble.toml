@@ -8,15 +8,13 @@ name = "Kibble Testing"
         type = "transacton"
         name = "setup-account"
         args = ["Alice"]
-
-    [[tests.interactions]]
-        type = "transaction"
-        name = "mint-kibble"
+        singer=["Alice"]
 
     [[tests.interactions]]
         type = "transaction"
         name = "transfer-kibble"
         args = ["Alice", "1.337"]
+        signer = ["Admin"]
 
     [[tests.interactions]]
         type = "script"
