@@ -2,7 +2,7 @@
   "name": "toml-testing",
   "version": "0.0.1",
   "main": "index.js",
-  "module": "src/main.js",
+  "module": "src/main-toml.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/onflow/flow-cadence-hrt.git"
@@ -20,25 +20,36 @@
   "license": "Apache-2.0",
   "sideEffects": false,
   "dependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/preset-env": "^7.14.4",
+    "babel-jest": "^27.0.2",
     "colors": "^1.4.0",
     "esm": "^3.2.25",
     "flow-cadut": "^0.1.2",
-    "flow-js-testing": "flow-js-testing",
+    "flow-js-testing": "^0.1.9",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "jest": "^27.0.4",
     "prettier": "^2.3.0",
-    "toml": "^3.0.0"
+    "toml": "^3.0.0",
+    "yaml": "^1.10.2"
   },
   "jest": {
+    "moduleFileExtensions": [
+      "toml",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
     "transform": {
-      ".js": "<rootDir>/toml-transform.js"
+      ".toml": "<rootDir>/toml-transform.js"
     },
     "testMatch": [
-      "**/__tests__/*.js"
-    ]
+      "**/__tests__/*.toml"
+    ],
+    "testEnvironment": "node"
   },
   "description": ""
 }
