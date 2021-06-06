@@ -51,5 +51,8 @@
     ],
     "testEnvironment": "node"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.2.1"
+  }
 }
